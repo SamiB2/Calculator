@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import "./App.css";
+import { evaluate } from "mathjs";
 
 function App() {
   const [value, setValue] = useState(""); // Declare a state variable called 'value'
+
+  const handleEqual = () => {
+    try {
+      setValue(evaluate(value).toString()); // Safely evaluate the math expression
+    } catch (error) {
+      setValue("Error"); // Handle invalid expressions
+    }
+  };
 
   return (
     <div className="container">
@@ -110,7 +119,7 @@ function App() {
               type="button"
               value="="
               className="equal"
-              onClick={(e) => setValue(eval(value))}
+              onClick={handleEqual}
             />
           </div>
         </form>
