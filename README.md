@@ -68,7 +68,7 @@ Each button has an `onClick` event that updates the `value` state based on its f
 
 The code snippet you provided defines a function `handleEqual` that is responsible for safely evaluating the mathematical expression entered by the user when they press the "=" button on the calculator. Here's a breakdown of each part:
 
-### b.1. **Function Definition**
+##### b.1. **Function Definition**
 
 ```javascript
 const handleEqual = () => {
@@ -76,7 +76,7 @@ const handleEqual = () => {
 
 This defines a function called `handleEqual`. It doesn't take any parameters but uses the state `value` that stores the current mathematical expression.
 
-### b.2. **Try-Catch Block**
+##### b.2. **Try-Catch Block**
 
 ```javascript
 try {
@@ -93,25 +93,25 @@ try {
 
 - **`catch` block**: If the `evaluate` function throws an error (for example, if the user entered an invalid expression like `"3++5"`), the code inside the `catch` block will run. It sets the state `value` to `"Error"`, which will display the string `"Error"` on the screen, indicating that something went wrong.
 
-### b.3. **State Management with `setValue`**
+##### b.3. **State Management with `setValue`**
 
 `setValue` is the function from React's `useState` hook used to update the state. In this case, it's updating the `value` that is bound to the input field where the user sees the result of their calculations.
 
 - If the expression is valid, `setValue(evaluate(value).toString())` updates the input with the result of the calculation.
 - If the expression is invalid and an error occurs, `setValue("Error")` updates the input with the string "Error".
 
-### b.4. **Why Use `evaluate` from `math.js`?**
+##### b.4. **Why Use `evaluate` from `math.js`?**
 
 - The `evaluate` function from the `math.js` library is safer than using `eval()` because it only evaluates mathematical expressions, preventing the execution of arbitrary code. This is important for preventing security risks like code injection.
 
-### b.5. Full Explanation of the Workflow
+##### b.5. Full Explanation of the Workflow
 
 1. When the "=" button is clicked, the `handleEqual` function is triggered.
 2. It attempts to evaluate the current expression (stored in `value`).
 3. If the expression is valid, it computes the result and updates the input field to show the result.
 4. If the expression is invalid, it catches the error and sets the input to "Error", providing feedback to the user.
 
-### b.6. Summary
+##### b.6. Summary
 
 The `handleEqual` function is a safety mechanism to ensure that only valid mathematical expressions are processed, and any errors are gracefully handled by displaying "Error". It uses the `evaluate` function from the `math.js` library, which makes the evaluation safer compared to using `eval()`.
 
@@ -164,7 +164,7 @@ Buttons are grouped using `<div>` elements to organize numbers and operators vis
 
 ### 6. **Styling**
 
-The `container` and `calculator` are styled through CSS in the linked `App.css`. The layout and button design are likely defined here.
+The `container` and `calculator` are styled through CSS in the linked `App.css`. The layout and button design are likely defined here
 
 ---
 
