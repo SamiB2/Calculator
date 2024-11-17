@@ -86,7 +86,7 @@ try {
 }
 ```
 
-- **`try` block**: The code inside the `try` block attempts to evaluate the mathematical expression stored in `value` (e.g., `"3+5*2"`). Here's what happens in the `try` block:
+- **`try` block**: The code inside the `try` block tries to evaluate the mathematical expression stored in `value` (e.g., `"3+5*2"`). Here's what happens in the `try` block:
 
   - `evaluate(value)` is a function from the `math.js` library. It parses the string `value` and computes the result of the mathematical expression. For example, if `value = "3+5*2"`, `evaluate("3+5*2")` will return `13`.
   - `.toString()` converts the result back to a string, which is then set as the new state using `setValue()`.
